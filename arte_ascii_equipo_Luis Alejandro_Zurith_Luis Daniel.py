@@ -136,22 +136,31 @@ def piramide(altura):
     pass
 
 
+#Menu para seleccionar patrones geométricos
 def menu_patrones():
-    """Menú para seleccionar patrones geométricos"""
-    print("\n--- PATRONES GEOMÉTRICOS ---")
-    print("1. Triángulo")
-    print("2. Cuadrado")
-    print("3. Pirámide")
-    print("4. Volver al menú principal")
+    while True:
+            print("\n--- PATRONES GEOMÉTRICOS ---")
+            print("1. Triángulo")
+            print("2. Cuadrado")
+            print("3. Pirámide")
+            print("4. Volver al menú principal")
+            opcion_patrones = input("\nSeleccione una opción (1-4): ")
+            if opcion_patrones == "4":
+                return
+            val = int(validar_numero("\nDe que tamaño quiere su figura?: ")) #Se vuelve un int para no tener problemas
+            if opcion_patrones == "1":
+                triangulo(val)
+                agregar_al_historial("Patrón Geométrico", f"Triangulo de tamaño {val}")
+            elif opcion_patrones == "2":
+                cuadrado(val)
+                agregar_al_historial("Patrón Geométrico", f"Cuadrado de tamaño {val}")
+            elif opcion_patrones == "3":
+                piramide(val)
+                agregar_al_historial("Patrón Geométrico", f"Piramide de tamaño {val}")
+            else:
+                print("Elige una de las opciones validas")
 
-    # TODO: Implementar lógica del menú
-    # - Solicitar opción al usuario
-    # - Pedir tamaño del patrón
-    # - Llamar a la función correspondiente
-    # - Preguntar si desea ver otro patrón
-
-    pass  # Reemplazar con su código
-
+    pass
 
 # ============================================
 # SECCIÓN 3: TEXTO ARTÍSTICO (Estudiante 2)
