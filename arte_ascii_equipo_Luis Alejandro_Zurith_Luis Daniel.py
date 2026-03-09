@@ -3,18 +3,29 @@ Generador de Arte ASCII Animado
 Proyecto de Animación
 
 Equipo:
-- Estudiante 1: [Nombre] - Menú y Patrones Geométricos
+- Estudiante 1: [Luis Alejandro Ambriz Cordero] - Menú y Patrones Geométricos
 - Estudiante 2: [Nombre] - Generadores de Texto Artístico
 - Estudiante 3: [Nombre] - Animaciones
 
 Fecha: Febrero 2026
 Universidad de Guadalajara - Campus GDL
 """
+import os
+from datetime import datetime
 
 # ============================================
 # SECCIÓN 1: MENÚ PRINCIPAL (Estudiante 1)
 # ============================================
+# Variable para el historial
+historial = []
 
+# Función para verificar entradas
+def validar_numero(mensaje):
+    while True:
+        try: return float(input(f"  {mensaje}"))
+        except ValueError: print(" X  Error: Ingrese un número válido.")
+
+#Menu con todas las opciones y opciones de historial
 def mostrar_menu_principal():
     """Muestra el menú de la galería de arte ASCII"""
     print("\n" + "="*60)
@@ -27,9 +38,71 @@ def mostrar_menu_principal():
     print("3. Marcos Decorativos")
     print("4. Animaciones")
     print("5. Tabla de Multiplicar Visual")
-    print("6. Salir")
+    print("6. Mostrar historial")
+    print("7. Borrar historial")
+    print("8. Salir")
     print("-"*60)
 
+# GESTIÓN Y ARCHIVOS
+
+#Por el momento el historial solo guarda la categoria y descripcion base de las operaciones de figuras basicas
+#No tengo ni la menor idea de como guardar las figuras
+def agregar_al_historial(categoria, descripcion):
+    global historial
+    fecha_hora = datetime.now().strftime("%H:%M:%S")
+    # Formato: Hora, Categoria que se eligío, Descripción
+    entrada = f"[{fecha_hora}] {categoria}: {descripcion}"
+    historial.append(entrada)
+    # Almacenar solo las últimas 10 operaciones
+    if len(historial) > 10: historial.pop(0)
+
+def mostrar_historial():
+    print("\n" + "HISTORIAL RECIENTE " * 2)
+    if not historial:
+        print("   > El historial está vacío.")
+    else:
+        for i, registro in enumerate(historial, 1):
+            print(f"  {i}. {registro}")
+
+def guardar_historial_archivo():
+    if not os.path.exists("datos"): os.makedirs("datos")
+    # Guardar historial en archivo al salir
+    with open("datos/historial.txt", "w") as archivo:
+        for linea in historial: archivo.write(linea + "\n")
+
+def cargar_historial_archivo():
+    global historial
+    # Cargar historial al iniciar si existe
+    if os.path.exists("datos/historial.txt"):
+        with open("datos/historial.txt", "r") as archivo:
+            historial.extend([linea.strip() for linea in archivo])
+            if len(historial) > 10:
+                historial[:] = historial[-10:]
+
+def borrar_historial():
+  global historial
+  #Dar la opción al usuario de borrar el historial, se repite hasta que se ingrese una opcion valida
+  while True:
+    try:
+      opcion_borrar_historial = int(input("Seguro que quieres borrar el historial?\n1 = SI\n2 = NO\n"))
+
+      if opcion_borrar_historial == 1:
+        #Esto limpia el historial de la memoria
+        historial.clear()
+        if os.path.exists("datos/historial.txt"):
+          with open("datos/historial.txt", "w") as archivo:
+            archivo.write("")  # Vacía el archivo si es que existe
+        print("✅ Historial borrado correctamente.")
+        return
+      elif opcion_borrar_historial == 2:
+        #Esto vuelve al menu principal si se decide que no
+        return
+        #Se imprime si se elige una opcion invalida con numero entero
+      else:
+        print("Elige una de las opciones validas")
+        #Se imprime si se elige una letra como opcion
+    except ValueError:
+      print("Error: Debes ingresar un número entero")
 
 # ============================================
 # SECCIÓN 2: PATRONES GEOMÉTRICOS (Estudiante 1)
