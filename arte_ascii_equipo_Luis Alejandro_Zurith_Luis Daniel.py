@@ -108,66 +108,32 @@ def borrar_historial():
 # SECCIÓN 2: PATRONES GEOMÉTRICOS (Estudiante 1)
 # ============================================
 
+#Genera un triangulo de asteriscos con una altura dada
 def triangulo(altura):
-    """
-    Genera un triángulo de asteriscos de altura especificada.
+    for i in range(1, altura + 1):
+        print('*' * i)
+    pass
 
-    Args:
-        altura (int): Número de filas del triángulo
-    """
-    # TODO: Implementar
-    # Usar un loop for con range(1, altura + 1)
-    # Cada fila debe tener i asteriscos
-    # Ejemplo: si altura=5
-    # *
-    # **
-    # ***
-    # ****
-    # *****
-
-    pass  # Reemplazar con su código
-
-
+#Genera un cuadrado con un espacio en blanco en el interior
 def cuadrado(lado):
-    """
-    Genera un cuadrado con bordes de tamaño especificado.
+    for i in range(lado):
+        for j in range(lado):
+            # Imprime los asterisco en los bordes y deja un espacio en blanco en el interior
+            if i == 0 or i == lado - 1 or j == 0 or j == lado - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        #Salto de linea el final de cada ciclo
+        print()
+    pass
 
-    Args:
-        lado (int): Tamaño del lado del cuadrado
-    """
-    # TODO: Implementar
-    # - Primera fila: todos asteriscos o símbolos
-    # - Filas del medio: símbolo, espacios, símbolo
-    # - Última fila: todos asteriscos o símbolos
-    # Ejemplo: cuadrado(5)
-    # *****
-    # *   *
-    # *   *
-    # *   *
-    # *****
-
-    pass  # Reemplazar con su código
-
-
+#Genera una piramede centrada de asteriscos con una altura dada
 def piramide(altura):
-    """
-    Genera una pirámide centrada de altura especificada.
-
-    Args:
-        altura (int): Número de filas de la pirámide
-    """
-    # TODO: Implementar
-    # Cada fila debe:
-    # - Tener espacios al inicio para centrar: (altura - i) espacios
-    # - Tener asteriscos: 2*i - 1 asteriscos
-    # Ejemplo: piramide(5)
-    #     *
-    #    ***
-    #   *****
-    #  *******
-    # *********
-
-    pass  # Reemplazar con su código
+    for i in range(1, altura + 1):
+      Espacios = " " * (altura - i)
+      Asteriscos = "*" * (2 * i - 1)
+      print(Espacios + Asteriscos)
+    pass
 
 
 def menu_patrones():
