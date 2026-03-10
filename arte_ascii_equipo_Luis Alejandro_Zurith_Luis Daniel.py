@@ -247,72 +247,83 @@ def menu_texto_artistico():
 
 
 # ============================================
-# SECCIÓN 4: ANIMACIONES (Estudiante 3)
+# SECCIÓN 4: ANIMACIONES (Estudiante 3: Missa)
 # ============================================
 
 def crear_retraso(duracion):
     """
     Crea un retraso usando un loop vacío.
-
-    Args:
-        duracion (int): Factor de duración (más alto = más lento)
+    Ajustado para procesadores rápidos (Apple M1).
     """
-    # TODO: Implementar retraso
-    # Usar un loop for que no haga nada
-    # Ejemplo: for _ in range(duracion * 100000):
-    #              pass
-
-    pass  # Reemplazar con su código
+    # Factor de 2,000,000 para que la animación sea visible al ojo humano
+    for _ in range(duracion * 2000000):
+        pass
 
 
 def barra_progreso():
     """Muestra una barra de progreso animada"""
-    # TODO: Implementar barra de progreso
-    # - Usar un loop de 0 a 100
-    # - En cada iteración, mostrar la barra actualizada
-    # - Usar caracteres como █ ■ o # para la barra llena
-    # - Usar - o espacio para la parte vacía
-    # - Mostrar el porcentaje
+    print("\n📦 Iniciando descarga de recursos...")
+    ancho_barra = 20
 
-    # Ejemplo de salida:
-    # Procesando...
-    # [■■■■■■■■■■----------] 50%
-    # [■■■■■■■■■■■■■■■■----] 80%
-    # [■■■■■■■■■■■■■■■■■■■■] 100% ¡Completo!
+    for i in range(101):
+        # Cálculo de bloques llenos (█) y vacíos (-)
+        lleno = int((i / 100) * ancho_barra)
+        vacio = ancho_barra - lleno
 
-    # Pista: usar end="\r" en print para sobrescribir la misma línea
+        # \r mueve el cursor al inicio de la línea para sobrescribir
+        barra = "█" * lleno + "-" * vacio
+        print(f"\rProgreso: [{barra}] {i}%", end="")
 
-    pass  # Reemplazar con su código
+        crear_retraso(1)
+
+    print("\n\n✅ ¡Proceso finalizado con éxito!")
+    # Se integra con la función de historial del Estudiante 1
+    agregar_al_historial("Animación", "Barra de progreso ejecutada")
 
 
 def animacion_texto_movil():
-    """Anima un texto moviéndose de izquierda a derecha"""
-    # TODO: Implementar animación de texto
-    # - Definir el texto a animar
-    # - Usar un loop para cada posición
-    # - En cada iteración, imprimir espacios + texto
-    # - Incrementar los espacios para simular movimiento
-    # - Limpiar la línea anterior con \r
+    """Anima un cohete moviéndose de izquierda a derecha"""
+    objeto = "🚀"
+    espacios_maximos = 35
 
-    # Ejemplo:
-    # ☆                (frame 1)
-    #  ☆               (frame 2)
-    #   ☆              (frame 3)
-    # ...
+    print("\n🚀 Preparando lanzamiento:")
+    for i in range(espacios_maximos):
+        # Multiplicamos el string de espacio " " por el índice i para mover el objeto
+        print(f"\r{' ' * i}{objeto}", end="")
+        crear_retraso(3)
+    for i in range(espacios_maximos):
+        # Multiplicamos el string de espacio " " por el índice i para mover el objeto
+        print(f"\r{' ' * i}{objeto}", end="")
+        crear_retraso(3)
 
-    pass  # Reemplazar con su código
+        # --- LÍNEA 294 (Nueva) ---
+    print(" 💥 ¡BOOM! 💥")
+
+    print("\n\n✨ ¡oh no el cohete choco con un asteroide .")
+    agregar_al_historial("Animación", "Lanzamiento de cohete móvil")
 
 
 def menu_animaciones():
-    """Menú para animaciones"""
-    print("\n--- ANIMACIONES ---")
-    print("1. Barra de Progreso")
-    print("2. Texto en Movimiento")
-    print("3. Volver al menú principal")
+    """Menú interactivo exclusivo para la sección de animaciones"""
+    while True:
+        print("\n" + "•" * 30)
+        print("      SISTEMA DE ANIMACIONES")
+        print("•" * 30)
+        print("1. Ejecutar Barra de Progreso")
+        print("2. Iniciar Animación de Cohete")
+        print("3. Volver al menú principal")
 
-    # TODO: Implementar lógica del menú
+        opcion = input("\nSeleccione una opción: ")
 
-    pass  # Reemplazar con su código
+        if opcion == "1":
+            barra_progreso()
+        elif opcion == "2":
+            animacion_texto_movil()
+        elif opcion == "3":
+            print("Saliendo de la sección de animaciones...")
+            break
+        else:
+            print("❌ Error: Opción invalida vuelve a ponerlo .")
 
 
 # ============================================
