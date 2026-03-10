@@ -14,7 +14,7 @@ Proyecto de Arte ASCII del Curso de Python UdeG
 ## Instrucciones de instalación y uso
 - Descarga el repositorio
 - Coloca sus contenidos dentro de una carpeta
-- Ejecuta el programada arte_ascii
+- Ejecuta el programa arte_ascii
 - Elige cualquiera de las opciones que te ofrece el programa
 - Cuando termines elige la opción de salir del programa
 - Disfruta de nuestro programa de arte ASCII!
