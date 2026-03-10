@@ -390,16 +390,16 @@ def main():
             menu_patrones()
         elif opcion == "2":
             print("\n--- GENERADOR DE BANNER ---")
-            # TODO: Solicitar texto y generar banner
-            pass
+            texto = input("Ingrese el texto para su banner: ")
+            generar_banner(texto)
         elif opcion == "3":
             menu_texto_artistico()
         elif opcion == "4":
             menu_animaciones()
         elif opcion == "5":
             print("\n--- TABLA DE MULTIPLICAR VISUAL ---")
-            # TODO: Solicitar número y generar tabla
-            pass
+            n = int(validar_numero("Ingrese un número para la tabla (1-10): ", 1, 10))
+            tabla_multiplicar_visual(n)
         elif opcion == "6":
             print("\n" + "="*60)
             print("  ¡Gracias por visitar la Galería de Arte ASCII!")
