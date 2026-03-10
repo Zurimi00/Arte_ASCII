@@ -5,7 +5,7 @@ Proyecto de Animación
 Equipo:
 - Estudiante 1: [Luis Alejandro Ambriz Cordero] - Menú y Patrones Geométricos
 - Estudiante 2: [Zurith Anelis Fierros Garcia] - Generadores de Texto Artístico
-- Estudiante 3: [Nombre] - Animaciones
+- Estudiante 3: [Luis Daniel Negrete Mata] - Animaciones
 
 Fecha: Febrero 2026
 Universidad de Guadalajara - Campus GDL
@@ -30,7 +30,7 @@ def mostrar_menu_principal():
     """Muestra el menú de la galería de arte ASCII"""
     print("\n" + "="*60)
     print("     🎨 GALERÍA DE ARTE ASCII v1.0 🎨")
-    print("     Creado por: [Nombres del equipo]")
+    print("     Creado por: [Luis Alejandro,Zurith Anelis,Luis Daniel]")
     print("="*60)
     print("\nGALERÍA:")
     print("1. Patrones Geométricos")
@@ -380,17 +380,16 @@ def main():
         if opcion == "1":
             menu_patrones()
         elif opcion == "2":
-            print("\n--- GENERADOR DE BANNER ---")
-            # TODO: Solicitar texto y generar banner
-            pass
+            texto = input("Ingrese el texto para su banner: ")
+            generar_banner(texto)
+    
         elif opcion == "3":
             menu_texto_artistico()
         elif opcion == "4":
             menu_animaciones()
         elif opcion == "5":
-            print("\n--- TABLA DE MULTIPLICAR VISUAL ---")
-            # TODO: Solicitar número y generar tabla
-            pass
+            n = int(validar_numero("Ingrese un número para la tabla (1-10): ", 1, 10))
+            tabla_multiplicar_visual(n)
         elif opcion == "6":
             print("\n" + "="*60)
             print("  ¡Gracias por visitar la Galería de Arte ASCII!")
