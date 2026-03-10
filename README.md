@@ -11,5 +11,13 @@ Proyecto de Arte ASCII del Curso de Python UdeG
 - Creación visual de tablas de multiplicar
 - Animaciones de barra de progreso y cohete
 
+## Instrucciones de instalación y uso
+- Descarga el repositorio
+- Coloca sus contenidos dentro de una carpeta
+- Ejecuta el programada arte_ascii
+- Elige cualquiera de las opciones que te ofrece el programa
+- Cuando termines elige la opción de salir del programa
+- Disfruta de nuestro programa de arte ASCII!
+
 ### Creado en Python 3.13.6
 ### Este proyecto cuenta con licencia conforme a los términos de la licencia MIT
