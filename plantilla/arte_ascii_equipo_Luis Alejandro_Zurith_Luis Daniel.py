@@ -5,7 +5,7 @@ Proyecto de Animación
 Equipo:
 - Estudiante 1: [Luis Alejandro Ambriz Cordero] - Menú y Patrones Geométricos
 - Estudiante 2: [Zurith Anelis Fierros Garcia] - Generadores de Texto Artístico
-- Estudiante 3: [Luis Daniel Negrete Mata] - Animaciones
+- Estudiante 3: [Nombre] - Animaciones
 
 Fecha: Febrero 2026
 Universidad de Guadalajara - Campus GDL
@@ -176,6 +176,7 @@ def generar_banner(texto):
     print("║" + " " * ancho + "║")
     print("╚" + "═" * ancho + "╝")
 pass
+    
 
 
 def marco_decorativo(texto, estilo):
@@ -228,9 +229,8 @@ def tabla_multiplicar_visual(numero):
         #Cerrar pie decorativo
     print("╚" + "═" * ancho + "╝")
 
-
 def menu_texto_artistico():
-    while True:
+   while True:
         print("\n--- GENERADORES DE TEXTO ARTÍSTICO ---")
         print("1. Crear Banner")
         print("2. Marco Decorativo")
@@ -271,84 +271,75 @@ def menu_texto_artistico():
 pass
 
 
-# ===========================================
-# SECCIÓN 4: ANIMACIONES (Estudiante 3: Missa)
-# =========================================
+
+
+# ============================================
+# SECCIÓN 4: ANIMACIONES (Estudiante 3)
+# ============================================
 
 def crear_retraso(duracion):
     """
     Crea un retraso usando un loop vacío.
 
+    Args:
+        duracion (int): Factor de duración (más alto = más lento)
     """
-    # Factor de 2,000,000 para que la animación sea visible al ojo humano
-    for _ in range(duracion * 2000000):
-        pass
+    # TODO: Implementar retraso
+    # Usar un loop for que no haga nada
+    # Ejemplo: for _ in range(duracion * 100000):
+    #              pass
+
+    pass  # Reemplazar con su código
 
 
 def barra_progreso():
     """Muestra una barra de progreso animada"""
-    print("\n📦 Iniciando descarga de recursos...")
-    ancho_barra = 25
+    # TODO: Implementar barra de progreso
+    # - Usar un loop de 0 a 100
+    # - En cada iteración, mostrar la barra actualizada
+    # - Usar caracteres como █ ■ o # para la barra llena
+    # - Usar - o espacio para la parte vacía
+    # - Mostrar el porcentaje
 
-    for i in range(101):
-        # Cálculo de bloques llenos (█) y vacíos (-)
-        lleno = int((i / 100) * ancho_barra)
-        vacio = ancho_barra - lleno
+    # Ejemplo de salida:
+    # Procesando...
+    # [■■■■■■■■■■----------] 50%
+    # [■■■■■■■■■■■■■■■■----] 80%
+    # [■■■■■■■■■■■■■■■■■■■■] 100% ¡Completo!
 
-        # \r mueve el cursor al inicio de la línea para sobrescribir
-        barra = "█" * lleno + "-" * vacio
-        print(f"\rProgreso: [{barra}] {i}%", end="")
+    # Pista: usar end="\r" en print para sobrescribir la misma línea
 
-        crear_retraso(1)
-
-    print("\n\n✅ ¡Proceso finalizado con éxito!")
-    # Se integra con la función de historial del Estudiante 1
-    agregar_al_historial("Animación", "Barra de progreso ejecutada")
+    pass  # Reemplazar con su código
 
 
 def animacion_texto_movil():
-    """Anima un cohete moviéndose de izquierda a derecha"""
-    objeto = "🚀"
-    espacios_maximos = 35
+    """Anima un texto moviéndose de izquierda a derecha"""
+    # TODO: Implementar animación de texto
+    # - Definir el texto a animar
+    # - Usar un loop para cada posición
+    # - En cada iteración, imprimir espacios + texto
+    # - Incrementar los espacios para simular movimiento
+    # - Limpiar la línea anterior con \r
 
-    print("\n🚀 Preparando lanzamiento:")
-    for i in range(espacios_maximos):
-        # Multiplicamos el string de espacio " " por el índice i para mover el objeto
-        print(f"\r{' ' * i}{objeto}", end="")
-        crear_retraso(3)
-    for i in range(espacios_maximos):
-        # Multiplicamos el string de espacio " " por el índice i para mover el objeto
-        print(f"\r{' ' * i}{objeto}", end="")
-        crear_retraso(3)
+    # Ejemplo:
+    # ☆                (frame 1)
+    #  ☆               (frame 2)
+    #   ☆              (frame 3)
+    # ...
 
-        # --- LÍNEA 294 (Nueva) ---
-    print(" 💥 ¡BOOM! 💥")
-
-    print("\n\n👾 ¡oh no el cohete choco con un asteroide .")
-    agregar_al_historial("Animación", "Lanzamiento de cohete móvil")
+    pass  # Reemplazar con su código
 
 
 def menu_animaciones():
-    """Menú interactivo exclusivo para la sección de animaciones"""
-    while True:
-        print("\n" + "•" * 30)
-        print("      SISTEMA DE ANIMACIONES")
-        print("•" * 30)
-        print("1. Ejecutar Barra de Progreso")
-        print("2. Iniciar Animación de Cohete")
-        print("3. Volver al menú principal")
+    """Menú para animaciones"""
+    print("\n--- ANIMACIONES ---")
+    print("1. Barra de Progreso")
+    print("2. Texto en Movimiento")
+    print("3. Volver al menú principal")
 
-        opcion = input("\nSeleccione una opción: ")
+    # TODO: Implementar lógica del menú
 
-        if opcion == "1":
-            barra_progreso()
-        elif opcion == "2":
-            animacion_texto_movil()
-        elif opcion == "3":
-            print("Saliendo de la sección de animaciones...")
-            break
-        else:
-            print("❌ Error: Opción invalida vuelve a ponerlo .")
+    pass  # Reemplazar con su código
 
 
 # ============================================
@@ -374,9 +365,9 @@ def main():
     """Función principal del programa"""
 
     print("╔════════════════════════════════════════════════════════════╗")
-    print("║           ¡Bienvenido a la Galería de Arte ASCII!          ║")
+    print("║           ¡Bienvenido a la Galería de Arte ASCII!         ║")
     print("║                                                            ║")
-    print("║                donde la programacion es arte               ║")
+    print("║    Donde la creatividad se encuentra con la programación  ║")
     print("╚════════════════════════════════════════════════════════════╝")
 
     continuar = True
@@ -412,7 +403,7 @@ def main():
         if continuar and opcion != "6":
             pausar()
 
-    print("\n Eso es todo amigos!. ¡muchas gracias ! 🎨")
+    print("\nPrograma terminado. ¡Hasta pronto! 🎨")
 
 
 # Punto de entrada del programa
