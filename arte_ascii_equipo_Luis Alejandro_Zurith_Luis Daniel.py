@@ -246,14 +246,14 @@ def menu_texto_artistico():
     pass  # Reemplazar con su código
 
 
-# ============================================
+# ===========================================
 # SECCIÓN 4: ANIMACIONES (Estudiante 3: Missa)
-# ============================================
+# =========================================
 
 def crear_retraso(duracion):
     """
     Crea un retraso usando un loop vacío.
-    Ajustado para procesadores rápidos (Apple M1).
+
     """
     # Factor de 2,000,000 para que la animación sea visible al ojo humano
     for _ in range(duracion * 2000000):
@@ -263,7 +263,7 @@ def crear_retraso(duracion):
 def barra_progreso():
     """Muestra una barra de progreso animada"""
     print("\n📦 Iniciando descarga de recursos...")
-    ancho_barra = 20
+    ancho_barra = 25
 
     for i in range(101):
         # Cálculo de bloques llenos (█) y vacíos (-)
@@ -299,7 +299,7 @@ def animacion_texto_movil():
         # --- LÍNEA 294 (Nueva) ---
     print(" 💥 ¡BOOM! 💥")
 
-    print("\n\n✨ ¡oh no el cohete choco con un asteroide .")
+    print("\n\n👾 ¡oh no el cohete choco con un asteroide .")
     agregar_al_historial("Animación", "Lanzamiento de cohete móvil")
 
 
@@ -349,9 +349,9 @@ def main():
     """Función principal del programa"""
 
     print("╔════════════════════════════════════════════════════════════╗")
-    print("║           ¡Bienvenido a la Galería de Arte ASCII!         ║")
+    print("║           ¡Bienvenido a la Galería de Arte ASCII!          ║")
     print("║                                                            ║")
-    print("║    Donde la creatividad se encuentra con la programación  ║")
+    print("║                donde la programacion es arte               ║")
     print("╚════════════════════════════════════════════════════════════╝")
 
     continuar = True
@@ -387,7 +387,7 @@ def main():
         if continuar and opcion != "6":
             pausar()
 
-    print("\nPrograma terminado. ¡Hasta pronto! 🎨")
+    print("\n Eso es todo amigos!. ¡muchas gracias ! 🎨")
 
 
 # Punto de entrada del programa
