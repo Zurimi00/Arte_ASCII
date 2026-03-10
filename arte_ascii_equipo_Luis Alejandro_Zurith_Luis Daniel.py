@@ -30,7 +30,7 @@ def mostrar_menu_principal():
     """Muestra el menú de la galería de arte ASCII"""
     print("\n" + "="*60)
     print("     🎨 GALERÍA DE ARTE ASCII v1.0 🎨")
-    print("     Creado por: [Nombres del equipo]")
+    print("     Creado por: [Luis Alejandro, Zurith Anelis y Luis Daniel]")
     print("="*60)
     print("\nGALERÍA:")
     print("1. Patrones Geométricos")
@@ -403,7 +403,7 @@ def main():
         elif opcion == "6":
             print("\n" + "="*60)
             print("  ¡Gracias por visitar la Galería de Arte ASCII!")
-            print("  Creado con ❤️  y código por: [Nombres del equipo]")
+            print("  Creado con ❤️  y código por: [Luis Alejandro, Zurith Anelis y Luis Daniel]")
             print("="*60)
             continuar = False
         else:
